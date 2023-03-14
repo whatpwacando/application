@@ -1,0 +1,52 @@
+<nz-layout class="container">
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+    <div class="logo">
+      <span> Powered By Mien </span>
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <li nz-submenu nzTitle="数据抓取" nzIcon="code" nzOpen>
+        <ul>
+          <li
+            nz-menu-item
+            [class.hide-text]="isCollapsed"
+            [nzSelected]="activeTab === 'cnpc'"
+            (click)="navigate('cnpc')"
+          >
+            <span class="icon" nz-icon nzType="cloud"></span>
+            <span class="text">中石油</span>
+          </li>
+          <li
+            nz-menu-item
+            [class.hide-text]="isCollapsed"
+            [nzSelected]="activeTab === 'sinopec'"
+            (click)="navigate('sinopec')"
+          >
+            <span class="icon" nz-icon nzType="cloud"></span>
+            <span class="text">中石化</span>
+          </li>
+        </ul>
+      </li>
+      <!-- <li nz-menu-item [nzSelected]="activeTab === 'revenue'" [class.hide-text]="isCollapsed" (click)="navigate('revenue')">
+              <span class="icon" nz-icon nzType="file"></span>
+              <span class="text">盈收报告</span>
+          </li>
+          <li nz-menu-item [nzSelected]="activeTab === 'model'" [class.hide-text]="isCollapsed" (click)="navigate('model')">
+              <span class="icon" nz-icon nzType="file"></span>
+              <span class="text">工厂模型</span>
+          </li> -->
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header class="header">
+      <span
+        class="trigger"
+        nz-icon
+        [nzType]="'menu'"
+      ></span>
+      <div class="title">{{ eventBus.systemTitle$ | async }}</div>
+    </nz-header>
+    <nz-content class="content">
+      <router-outlet></router-outlet>
+    </nz-content>
+  </nz-layout>
+</nz-layout>

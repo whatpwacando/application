@@ -1,0 +1,46 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+
+nz-sider {
+  color: #ddd;
+}
+
+.logo {
+  height: 2.4rem;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nz-header {
+  background: #fff;
+  padding: 0;
+  display: flex;
+  align-items: center;
+
+  .title {
+      font-size: 2.0rem;
+      font-weight: 600;
+  }
+}
+
+nz-content {
+  margin: 16px;
+}
+

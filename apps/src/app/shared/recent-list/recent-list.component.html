@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="search">
+        <nz-input-group [nzAddOnAfter]="suffixButton">
+            <input type="text" nz-input />
+        </nz-input-group>
+        <ng-template #suffixButton>
+            <button
+                class="extend-btn"
+                [class.extended]="extended"
+                nz-button
+                (click)="extended = !extended"
+                nzType="primary"
+                nzShape="circle"
+            >
+                <span nz-icon nzType="caret-down"></span>
+            </button>
+        </ng-template>
+    </div>
+
+    <div *ngIf="extended" class="items">
+        <ul nz-list [nzDataSource]="data" nzBordered nzSize="large">
+            <li class="item" nz-list-item *ngFor="let item of data" nzNoFlex>
+                <ul nz-list-item-actions>
+                    <nz-list-item-action>
+                        <a (click)="check(item.id)">查看</a>
+                    </nz-list-item-action>
+                </ul>
+                {{ item.name || '--' }}
+            </li>
+        </ul>
+    </div>
+</div>

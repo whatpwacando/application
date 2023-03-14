@@ -1,0 +1,36 @@
+.container {
+    background-color: white;
+    width: 40rem;
+    box-shadow: 0 2px 8px #ccc;
+
+    .search {
+        height: 6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+
+        input {
+            height: 4rem;
+        }
+
+        .extend-btn {
+            transition: all 0.5s;
+
+            &.extended {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .items {
+        .item {
+            padding: 10px;
+            box-sizing: border-box;
+            height: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}

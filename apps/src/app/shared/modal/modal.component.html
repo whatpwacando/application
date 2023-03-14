@@ -1,0 +1,12 @@
+<div class="container" [style.left.px]="x" [style.top.px]="y" [style.width.px]="width">
+    <header class="header" (mousedown)="onMouseDown($event)">
+        <div class="title">{{ title }}</div>
+        <div class="control">
+            <span class="pin" [class.pined]="isPined" nz-icon nzType="pushpin" (click)="pinModal()"></span>
+            <span class="close" nz-icon nzType="close" (click)="close()"></span>
+        </div>
+    </header>
+    <div class="body">
+        <ng-content></ng-content>
+    </div>
+</div>
